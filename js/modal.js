@@ -1,5 +1,20 @@
-const x = 5;
+const fnA = function () {
+  console.log("Выполняется функция А");
 
-let y = 5;
+  fnB();
+  //return(111);
+};
 
-y = 5;
+const fnB = function () {
+  console.log("Выполняется функция B");
+
+  fnC();
+};
+
+const fnC = function () {
+  console.log("Выполняется функция C");
+};
+
+fnA();
+//fnB();
+//fnC();
