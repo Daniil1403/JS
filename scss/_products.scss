@@ -116,7 +116,7 @@
     }
   }
 
-  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     width: 224px;
     height: 473px;
     flex-basis: calc(100%-2 * 16px / 2);
