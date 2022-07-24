@@ -3,7 +3,7 @@
   padding-top: 60px;
 }
 
-.conteiner {
+.container {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -119,14 +119,14 @@
   @media screen and (min-width: $tablet) and (max-width: 1199px) {
     width: 224px;
     height: 473px;
-    flex-basis: calc(100-2 * 16px / 2);
+    flex-basis: calc(100%-2 * 16px / 2);
     margin: 8px;
   }
 
   @include desktop {
     width: 368px;
     height: 535px;
-    flex-basis: calc(100-2 * 32px / 2);
+    flex-basis: calc(100%-2 * 32px / 2);
     margin: 16px;
   }
 }
@@ -247,3 +247,5 @@
     margin-bottom: 60px;
   }
 }
+
+

@@ -1,20 +1,17 @@
-const fnA = function () {
-  console.log("Выполняется функция А");
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display = "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
-  fnB();
-  //return(111);
-};
-
-const fnB = function () {
-  console.log("Выполняется функция B");
-
-  fnC();
-};
-
-const fnC = function () {
-  console.log("Выполняется функция C");
-};
-
-fnA();
-//fnB();
-//fnC();
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display == "none") {
+      x.style.display = "block";
+  } else {
+     x.style.display = "none";
+    }
+}
