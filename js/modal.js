@@ -49,7 +49,9 @@ const changeCase = function (string) {
 
  for (const letter of letters) {
   const isInLowerCase = letter === letter.toLowerCase();
-  inverstedString += isInLowerCase ? letter.toUpperCase() : letter.toLowerCase;
+  inverstedString += isInLowerCase
+   ? letter.toUpperCase()
+   : letter.toLowerCase();
  }
  return inverstedString;
 };
