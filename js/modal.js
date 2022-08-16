@@ -117,38 +117,66 @@
 // console.log(add(1, 5, 6, 9, 8)); // 29
 // console.log(add(1, 5, 6, 9, 8, 56, 87)); // 172
 
-function getEvenNumbers(start, end) {
- // Change code below this line
- const numbers = [];
-
- for (let i = start; i <= end; i += 1) {
-  if (i % 2 === 0) {
-   numbers.push(i);
-  }
- }
- return numbers;
- // Change code above this line
-}
-
-console.log(getEvenNumbers(2, 5));
-console.log(getEvenNumbers(7, 7));
-
-const apartment = {
- imgUrl: 'https://via.placeholder.com/640x480',
- descr: 'Spacious apartment in the city center',
- rating: 4.7,
- price: 5000,
- tags: ['premium', 'promoted', 'top', 'trusted'],
- owner: {
-  name: 'Henry Sibola',
-  phone: '982-126-1588',
-  email: 'henry.carter@aptmail.com',
+/* Создание корзины товаров */
+const card = {
+ items: [],
+ getItems() {
+  return this.items;
  },
+ add(product) {
+  for (const item of this.items) {
+   if (item.name === product.name) {
+    item.qanntity += 1;
+    return;
+   }
+  }
+  const newProduct = {
+   ...this.items,
+   qanntity: 1,
+  };
+
+  this.items.push(product);
+ },
+ remove(productName) {
+  for (let i = 0; i <= this.items.length; i += 1) {
+   const item = this.items[i];
+   if (productName === item.name) {
+    this.items.splice(i, 1);
+    return;
+   }
+  }
+ },
+ clear() {
+  this.items = [];
+ },
+ countTotalPrice() {
+  let total = 0;
+
+  for (const item of this.items) {
+   total += item.price;
+  }
+  return total;
+ },
+ increaseQuantity() {},
+ decreaceQuantity() {},
 };
 
 // Change code below this line
-apartment.area = 60;
-apartment.rooms = 3;
-apartment.location = [];
-apartment.owner.name = 'Jamaica';
-apartment.location.city = 'Kingston';
+card.add({ name: 'tomato', price: '50' });
+card.add({ name: 'cherry', price: '50' });
+card.add({ name: 'apple', price: '50' });
+card.add({ name: 'banana', price: '50' });
+
+console.table(card.getItems());
+
+card.remove('apple');
+console.table(
+ card.getItems()
+); /* Находим товар среди нашей корзины, если такой есть - удаляем */
+
+card.clear();
+console.log(
+ card.getItems()
+); /* Удаляет все товары из корзины, возвращаем пустой массив */
+
+console.log(countTotalPrice());
