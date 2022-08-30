@@ -181,13 +181,42 @@
 
 // console.log(countTotalPrice());
 
-const players = [
- { id: '2347865943', timePlayer: 250 },
- { id: '2347865943', timePlayer: 480 },
- { id: '2347865943', timePlayer: 150 },
- { id: '2347865943', timePlayer: 120 },
- { id: '2347865943', timePlayer: 70 },
-];
+class User {
+ email;
 
-const total = players.reduse((time, player) => time + player.timePlayer, 0);
-console.log(total);
+ constructor(email) {
+  this.email = email;
+ }
+
+ get email() {
+  return this.email;
+ }
+
+ set email(newEmail) {
+  this.email = newEmail;
+ }
+}
+
+class Admin extends User {
+ // Change code below this line
+
+ static AccessLevel = {
+  BASIC: 'basic',
+  SUPERUSER: 'superuser',
+ };
+
+ constructor(email, accessLevel) {
+  super(email);
+  this.accessLevel = accessLevel;
+ }
+
+ // Change code above this line
+}
+
+const mango = new Admin({
+ email: 'mango@mail.com',
+ accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
