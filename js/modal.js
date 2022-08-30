@@ -117,66 +117,77 @@
 // console.log(add(1, 5, 6, 9, 8)); // 29
 // console.log(add(1, 5, 6, 9, 8, 56, 87)); // 172
 
-/* Создание корзины товаров */
-const card = {
- items: [],
- getItems() {
-  return this.items;
- },
- add(product) {
-  for (const item of this.items) {
-   if (item.name === product.name) {
-    item.qanntity += 1;
-    return;
-   }
-  }
-  const newProduct = {
-   ...this.items,
-   qanntity: 1,
-  };
+// /* Создание корзины товаров */
+// const card = {
+//  items: [],
+//  getItems() {
+//   return this.items;
+//  },
+//  add(product) {
+//   for (const item of this.items) {
+//    if (item.name === product.name) {
+//     item.qanntity += 1;
+//     return;
+//    }
+//   }
+//   const newProduct = {
+//    ...this.items,
+//    qanntity: 1,
+//   };
 
-  this.items.push(product);
- },
- remove(productName) {
-  for (let i = 0; i <= this.items.length; i += 1) {
-   const item = this.items[i];
-   if (productName === item.name) {
-    this.items.splice(i, 1);
-    return;
-   }
-  }
- },
- clear() {
-  this.items = [];
- },
- countTotalPrice() {
-  let total = 0;
+//   this.items.push(product);
+//  },
+//  remove(productName) {
+//   for (let i = 0; i <= this.items.length; i += 1) {
+//    const item = this.items[i];
+//    if (productName === item.name) {
+//     this.items.splice(i, 1);
+//     return;
+//    }
+//   }
+//  },
+//  clear() {
+//   this.items = [];
+//  },
+//  countTotalPrice() {
+//   let total = 0;
 
-  for (const item of this.items) {
-   total += item.price;
-  }
-  return total;
- },
- increaseQuantity() {},
- decreaceQuantity() {},
-};
+//   for (const item of this.items) {
+//    total += item.price;
+//   }
+//   return total;
+//  },
+//  increaseQuantity() {},
+//  decreaceQuantity() {},
+// };
 
-// Change code below this line
-card.add({ name: 'tomato', price: '50' });
-card.add({ name: 'cherry', price: '50' });
-card.add({ name: 'apple', price: '50' });
-card.add({ name: 'banana', price: '50' });
+// // Change code below this line
+// card.add({ name: 'tomato', price: '50' });
+// card.add({ name: 'cherry', price: '50' });
+// card.add({ name: 'apple', price: '50' });
+// card.add({ name: 'banana', price: '50' });
 
-console.table(card.getItems());
+// console.table(card.getItems());
 
-card.remove('apple');
-console.table(
- card.getItems()
-); /* Находим товар среди нашей корзины, если такой есть - удаляем */
+// card.remove('apple');
+// console.table(
+//  card.getItems()
+// ); /* Находим товар среди нашей корзины, если такой есть - удаляем */
 
-card.clear();
-console.log(
- card.getItems()
-); /* Удаляет все товары из корзины, возвращаем пустой массив */
+// card.clear();
+// console.log(
+//  card.getItems()
+// ); /* Удаляет все товары из корзины, возвращаем пустой массив */
 
-console.log(countTotalPrice());
+// console.log(countTotalPrice());
+
+const players = [
+ { id: '2347865943', timePlayer: 250 },
+ { id: '2347865943', timePlayer: 480 },
+ { id: '2347865943', timePlayer: 150 },
+ { id: '2347865943', timePlayer: 120 },
+ { id: '2347865943', timePlayer: 70 },
+];
+
+const total = players.reduse((time, player) => time + player.timePlayer, 0);
+console.log(total);
